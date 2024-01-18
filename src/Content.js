@@ -7,9 +7,19 @@ const Content = () => {
     return names[int]
   }
 
+  const handleClick = () => {
+    console.log("You clicked me!")
+  }
+
+  const handleClick2 = (name) => {
+    console.log(`Hello ${name}!`)
+  }
+
   return (
     <main>
       <p>Hello {handleNameChange()}!</p>
+      <button onClick={handleClick}>Click it</button>
+      <button onClick={() => handleClick2("fastoch")}>Say hello</button>
     </main>
   )
 }
