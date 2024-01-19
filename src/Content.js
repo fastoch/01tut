@@ -15,11 +15,18 @@ const Content = () => {
     console.log(`Hello ${name}!`)
   }
 
+  const handleClick3 = (e) => {
+    console.log(e)
+    console.log(e.target)
+    console.log(e.target.innerText)
+  }
+
   return (
     <main>
       <p>Hello {handleNameChange()}!</p>
       <button onClick={handleClick}>Click it</button>
       <button onClick={() => handleClick2("fastoch")}>Say hello</button>
+      <button onClick={(e) => handleClick3(e)}>Click me</button>
     </main>
   )
 }
