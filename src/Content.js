@@ -21,6 +21,12 @@ const Content = () => {
     }
   ])
 
+  // Identify the checked item by its id & Reverse the state of its 'checked' property 
+  const handleCheck = (id) => {
+    const listItems = items.map((item) => item.id === id ? { ...item, checked: !item.checked } : item)
+    setItems(listItems)
+  }
+
   return (
     <main>
       <ul role="list">
@@ -28,6 +34,7 @@ const Content = () => {
           <li className="item" key={item.id}>
             <input 
               type="checkbox" 
+              onChange={() => handleCheck(item.id)}
               checked={item.checked}
             />
             <label>{item.item}</label>
