@@ -37,26 +37,32 @@ const Content = () => {
 
   return (
     <main>
-      <ul>
-        {items.map((item) => (
-          <li className="item" key={item.id}>
-            <input 
-              type="checkbox" 
-              onChange={() => handleCheck(item.id)}
-              checked={item.checked}
-            />
-            <label 
-              onDoubleClick={() => handleCheck(item.id)}
-              style={(item.checked) ? { textDecoration: 'line-through'} : null}
-            >{item.item}</label>
-            <FaTrashAlt 
-              onClick={() => handleDelete(item.id)}
-              role="button" 
-              tabIndex="0" 
-            />
-          </li>
-        ))}
-      </ul>
+      {/* if list is not empty */}
+      {items.length ? (
+        <ul>
+          {items.map((item) => (
+            <li className="item" key={item.id}>
+              <input 
+                type="checkbox" 
+                onChange={() => handleCheck(item.id)}
+                checked={item.checked}
+              />
+              <label 
+                onDoubleClick={() => handleCheck(item.id)}
+                style={(item.checked) ? { textDecoration: 'line-through'} : null}
+              >{item.item}</label>
+              <FaTrashAlt 
+                onClick={() => handleDelete(item.id)}
+                role="button" 
+                tabIndex="0" 
+              />
+            </li>
+          ))}
+        </ul>
+      /* if list is empty then */
+      ) : (
+        <p>Your list is empty!</p>
+      )}
     </main>
   )
 }
