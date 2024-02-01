@@ -3,23 +3,6 @@ import { useState } from 'react'
 import { FaTrashAlt } from 'react-icons/fa'
 
 const Content = () => {
-  const [items, setItems] = useState([
-    {
-      id: 1,
-      checked: false,
-      item: "A bag of Cocoa-covered Almonds Unsalted"
-    },
-    {
-      id: 2,
-      checked: false,
-      item: "Freshly-packed Hazelnuts"
-    },
-    {
-      id: 3,
-      checked: false,
-      item: "Home-brewed Ginger-flavoured Beers"
-    }
-  ])
 
   // create new list by reversing the 'checked' property of checked item
   const handleCheck = (id) => {
